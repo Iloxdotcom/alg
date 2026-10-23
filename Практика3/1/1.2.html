@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2 — Работа с getDay</title>
+</head>
+<body>
+<div class="benzo" style="text-align:center;font-size:28px;font-weight:bold;color:#e91e63;margin-top:40px;padding:20px;border-top:2px solid #ccc;">BENZO@TM</div>
+<script>
+    // Вспомогательная функция: день недели по-русски
+    function showDay(dayNumber) {
+        var days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+        return days[dayNumber];
+    }
+
+    var now = new Date();
+
+    // 2.1 Номер текущего дня недели
+    alert(
+        'ЗАДАНИЕ 2.1 — Номер текущего дня недели\n\n' +
+        'Объяснение: метод getDay() возвращает номер дня недели от 0 (воскресенье) до 6 (суббота).\n\n' +
+        'Результат: ' + now.getDay()
+    );
+
+    // 2.2 Текущий день недели словом
+    alert(
+        'ЗАДАНИЕ 2.2 — Текущий день недели словом\n\n' +
+        'Объяснение: используем вспомогательную функцию showDay, которая по номеру\n' +
+        'возвращает день недели по-русски из массива.\n\n' +
+        'Результат: ' + showDay(now.getDay())
+    );
+
+    // 2.3 Какой был день 7 января 2018 года
+    var date = new Date(2018, 0, 7); // месяц 0 = январь
+    alert(
+        'ЗАДАНИЕ 2.3 — День недели 7 января 2018 года\n\n' +
+        'Объяснение: создаём объект Date(2018, 0, 7) — 7 января 2018 (месяц 0 = январь).\n' +
+        'Затем через getDay() и showDay() узнаём день недели.\n\n' +
+        'Результат: ' + showDay(date.getDay()) + ' (' + date.getDay() + ')'
+    );
+</script>
+</body>
+</html>

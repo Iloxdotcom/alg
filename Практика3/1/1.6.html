@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 6 — Задачи</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .box { margin: 30px 0; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Задание 6.2 — Сколько дней осталось до дня рождения</h2>
+    <p>Введите дату рождения в формате <b>2014-12-31</b>:</p>
+    <input type="text" id="birthdayInput" placeholder="2014-12-31" style="padding:8px;width:200px;font-size:16px;">
+    <p id="birthdayResult" style="font-weight:bold;color:#2196F3;"></p>
+</div>
+
+<div class="benzo" style="text-align:center;font-size:28px;font-weight:bold;color:#e91e63;margin-top:40px;padding:20px;border-top:2px solid #ccc;">BENZO@TM</div>
+
+<script>
+    // ============================================================
+    // 6.1 Количество секунд, которое осталось до конца дня
+    // ============================================================
+    var d = new Date();
+    var endOfDay = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1);
+    var secondsLeft = Math.floor((endOfDay - d) / 1000);
+
+    alert(
+        'ЗАДАНИЕ 6.1 — Секунды до конца дня\n\n' +
+        'Объяснение: создаём дату «начало завтрашнего дня» (00:00:00).\n' +
+        'Вычитаем текущий момент и переводим в секунды.\n\n' +
+        'Результат: ' + secondsLeft + ' секунд'
+    );
+
+    // ============================================================
+    // 6.2 Сколько дней осталось до дня рождения (по вводу в input)
+    // ============================================================
+    var input = document.getElementById('birthdayInput');
+    var resultEl = document.getElementById('birthdayResult');
+
+    input.addEventListener('blur', function() {
+        var value = input.value.trim();
+        if (!value) {
+            resultEl.textContent = '';
+            return;
+        }
+
+        var birthTs = Date.parse(value);
+        if (isNaN(birthTs)) {
+            resultEl.textContent = 'Некорректная дата. Введите в формате 2014-12-31';
+            return;
+        }
+
+        var birthDate = new Date(birthTs);
+        var today = new Date();
+
+        // День рождения в текущем году
+        var thisYearBirthday = new Date(
+            today.getFullYear(),
+            birthDate.getMonth(),
+            birthDate.getDate()
+        );
+
+        // Если уже прошёл — берём следующий год
+        if (thisYearBirthday < today) {
+            thisYearBirthday = new Date(
+                today.getFullYear() + 1,
+                birthDate.getMonth(),
+                birthDate.getDate()
+            );
+        }
+
+        var oneDay = 1000 * 60 * 60 * 24;
+        var daysLeft = Math.ceil((thisYearBirthday - today) / oneDay);
+
+        resultEl.textContent = 'До дня рождения осталось: ' + daysLeft + ' дн.';
+        alert(
+            'ЗАДАНИЕ 6.2 — Дней до дня рождения\n\n' +
+            'Объяснение: дата рождения разбирается через Date.parse.\n' +
+            'Определяем ближайший день рождения (в этом или следующем году)\n' +
+            'и считаем разницу в днях.\n\n' +
+            'Введённая дата: ' + value + '\n' +
+            'Результат: ' + daysLeft + ' дн.'
+        );
+    });
+</script>
+</body>
+</html>

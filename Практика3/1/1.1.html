@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 1 — Работа с new Date</title>
+</head>
+<body>
+<div class="benzo" style="text-align:center;font-size:28px;font-weight:bold;color:#e91e63;margin-top:40px;padding:20px;border-top:2px solid #ccc;">BENZO@TM</div>
+<script>
+    function padZero(num) {
+        return num < 10 ? '0' + num : '' + num;
+    }
+
+    var now = new Date();
+
+    // 1.1 Текущий день
+    alert(
+        'ЗАДАНИЕ 1.1 — Текущий день\n\n' +
+        'Объяснение: метод getDate() возвращает число месяца (день) текущей даты.\n\n' +
+        'Результат: ' + now.getDate()
+    );
+
+    // 1.2 Текущий месяц
+    var months = ['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек'];
+    alert(
+        'ЗАДАНИЕ 1.2 — Текущий месяц\n\n' +
+        'Объяснение: метод getMonth() возвращает номер месяца, начиная с 0 (январь = 0).\n' +
+        'Чтобы получить привычный номер, прибавим 1.\n\n' +
+        'Результат: ' + (now.getMonth() + 1) + ' (' + months[now.getMonth()] + ')'
+    );
+
+    // 1.3 Текущий год
+    alert(
+        'ЗАДАНИЕ 1.3 — Текущий год\n\n' +
+        'Объяснение: метод getFullYear() возвращает полный год (4 цифры).\n\n' +
+        'Результат: ' + now.getFullYear()
+    );
+
+    // 1.4 Текущая дата-время в формате '12:59:59 31.12.2014'
+    var d = new Date();
+    var timeStr = padZero(d.getHours()) + ':' +
+                  padZero(d.getMinutes()) + ':' +
+                  padZero(d.getSeconds());
+    var dateStr = padZero(d.getDate()) + '.' +
+                  padZero(d.getMonth() + 1) + '.' +
+                  d.getFullYear();
+    alert(
+        'ЗАДАНИЕ 1.4 — Текущая дата-время\n\n' +
+        'Объяснение: собираем строку из часов, минут, секунд, дня, месяца и года.\n' +
+        'Функция padZero добавляет 0 перед однозначными числами.\n\n' +
+        'Результат: ' + timeStr + ' ' + dateStr
+    );
+</script>
+</body>
+</html>

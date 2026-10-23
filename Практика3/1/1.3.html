@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 3 — Работа с getTime</title>
+</head>
+<body>
+<div class="benzo" style="text-align:center;font-size:28px;font-weight:bold;color:#e91e63;margin-top:40px;padding:20px;border-top:2px solid #ccc;">BENZO@TM</div>
+<script>
+    // 3.1 Количество минут с 1 января 1970 года до настоящего момента
+    var d = new Date();
+    var ms = d.getTime();                 // миллисекунды с 01.01.1970
+    var minutes = Math.floor(ms / 1000 / 60);
+
+    alert(
+        'ЗАДАНИЕ 3.1 — Минуты с 1 января 1970 года\n\n' +
+        'Объяснение: getTime() даёт миллисекунды с 01.01.1970.\n' +
+        'Делим на 1000 (секунды) и на 60 (минуты), округляем вниз.\n\n' +
+        'Результат: ' + minutes + ' минут'
+    );
+</script>
+</body>
+</html>

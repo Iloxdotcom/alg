@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 5 — Разность между датами</title>
+</head>
+<body>
+<div class="benzo" style="text-align:center;font-size:28px;font-weight:bold;color:#e91e63;margin-top:40px;padding:20px;border-top:2px solid #ccc;">BENZO@TM</div>
+<script>
+    // 5.1 Количество секунд с начала дня до настоящего момента
+    var d = new Date();
+    var startOfDay = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    var seconds = Math.floor((d - startOfDay) / 1000);
+
+    alert(
+        'ЗАДАНИЕ 5.1 — Секунды с начала дня\n\n' +
+        'Объяснение: создаём дату «начало сегодняшнего дня» (00:00:00).\n' +
+        'Вычитаем её из текущего момента и переводим миллисекунды в секунды.\n\n' +
+        'Результат: ' + seconds + ' секунд'
+    );
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4 — Работа с Date.parse</title>
+</head>
+<body>
+<div class="benzo" style="text-align:center;font-size:28px;font-weight:bold;color:#e91e63;margin-top:40px;padding:20px;border-top:2px solid #ccc;">BENZO@TM</div>
+<script>
+    // 4.1 Количество часов между 1 марта 1988 года и текущим моментом
+    var start = Date.parse('1988-03-01T00:00:00');
+    var nowMs = Date.now();
+    var hours = Math.floor((nowMs - start) / 1000 / 60 / 60);
+
+    alert(
+        'ЗАДАНИЕ 4.1 — Часы между 1 марта 1988 и сейчас\n\n' +
+        'Объяснение: Date.parse(\'1988-03-01T00:00:00\') возвращает timestamp этой даты.\n' +
+        'Разность с текущим временем делим на 1000 (сек), 60 (мин) и 60 (часы).\n\n' +
+        'Результат: ' + hours + ' часов'
+    );
+</script>
+</body>
+</html>
