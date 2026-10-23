@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>4.7</title></head>
+<body>
+<h1>4.7. Дни недели, текущий курсивом</h1>
+<p>Текущий день в переменной day = 'Ср'. Совпадение оборачиваем в &lt;i&gt;.</p>
+<button onclick="run()">Показать окно</button>
+<div id="res"></div>
+<p>BENZO@TM</p>
+
+<script>
+function run() {
+  var days = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+  var day = 'Ср';
+  var html = '';
+  for (var i = 0; i < days.length; i++) {
+    if (days[i] === day) html += '<i>' + days[i] + '</i> ';   // ← if
+    else html += days[i] + ' ';
+  }
+  if (html !== '') {                         // ← if
+    alert('Текущий день: ' + day + '\nВсе дни: ' + days.join(' ')); // ← alert
+  }
+  document.getElementById('res').innerHTML = html;
+}
+</script>
+</body>
+</html>

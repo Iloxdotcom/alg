@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>1.4</title></head>
+<body>
+<h1>1.4. Сумма чисел от 1 до 100</h1>
+<p>sum=0, в цикле sum += i. Ожидаемо 5050.</p>
+<button onclick="run()">Показать окно</button>
+<pre id="res"></pre>
+<p>BENZO@TM</p>
+
+<script>
+function run() {
+  var sum = 0;
+  for (var i = 1; i <= 100; i++) sum += i;
+  if (sum > 0) {                         // ← if
+    alert('Сумма 1..100 = ' + sum);      // ← alert внутри if
+  }
+  document.getElementById('res').textContent = 'sum = ' + sum;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>4.4</title></head>
+<body>
+<h1>4.4. Числа на 1, 2 или 5</h1>
+<p>Массив [10,20,30,50,235,3000]. Превращаем в строку, смотрим s[0].</p>
+<button onclick="run()">Показать окно</button>
+<pre id="res"></pre>
+<p>BENZO@TM</p>
+
+<script>
+function run() {
+  var arr = [10, 20, 30, 50, 235, 3000], out = [];
+  for (var i = 0; i < arr.length; i++) {
+    var s = String(arr[i]);
+    if (s[0] === '1' || s[0] === '2' || s[0] === '5') out.push(arr[i]); // ← if
+  }
+  if (out.length > 0) {                    // ← if
+    alert('Подходят: ' + out.join(', '));  // ← alert внутри if
+  }
+  document.getElementById('res').textContent = out.join(', ');
+}
+</script>
+</body>
+</html>

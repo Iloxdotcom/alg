@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>4.3</title></head>
+<body>
+<h1>4.3. Есть ли 4 в массиве</h1>
+<p>Массив [1,2,5,9,4,13,4,10]. При встрече 4 — alert и break.</p>
+<button onclick="run()">Показать окно</button>
+<pre id="res"></pre>
+<p>BENZO@TM</p>
+
+<script>
+function run() {
+  var arr = [1, 2, 5, 9, 4, 13, 4, 10], found = false;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === 4) {                    // ← if
+      found = true;
+      alert('Есть!');                      // ← alert внутри if
+      break;
+    }
+  }
+  if (!found) {                            // ← if
+    alert('Нет четвёрки');                 // ← alert внутри if
+  }
+  document.getElementById('res').textContent = found ? 'Есть!' : 'Нет';
+}
+</script>
+</body>
+</html>

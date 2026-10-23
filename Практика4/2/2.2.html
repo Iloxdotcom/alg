@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>2.2</title></head>
+<body>
+<h1>2.2. Сумма элементов [1,2,3,4,5]</h1>
+<p>result=0, в цикле result += arr[i]. Ожидаемо 15.</p>
+<button onclick="run()">Показать окно</button>
+<pre id="res"></pre>
+<p>BENZO@TM</p>
+
+<script>
+function run() {
+  var arr = [1, 2, 3, 4, 5], result = 0;
+  for (var i = 0; i < arr.length; i++) result += arr[i];
+  if (result !== 0) {                    // ← if
+    alert('Сумма = ' + result);          // ← alert внутри if
+  }
+  document.getElementById('res').textContent = 'result = ' + result;
+}
+</script>
+</body>
+</html>

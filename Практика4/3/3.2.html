@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>3.2</title></head>
+<body>
+<h1>3.2. Зарплаты</h1>
+<p>Объект {Коля:200, Вася:300, Петя:400}. Формат: «Имя - зарплата N долларов.»</p>
+<button onclick="run()">Показать окно</button>
+<pre id="res"></pre>
+<p>BENZO@TM</p>
+
+<script>
+function run() {
+  var obj = {Коля: 200, Вася: 300, Петя: 400};
+  var out = '';
+  for (var key in obj) out += key + ' - зарплата ' + obj[key] + ' долларов.\n';
+  if (out !== '') {                      // ← if
+    alert(out);                          // ← alert внутри if
+  }
+  document.getElementById('res').textContent = out;
+}
+</script>
+</body>
+</html>

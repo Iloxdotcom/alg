@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>1.2</title></head>
+<body>
+<h1>1.2. Числа от 11 до 33</h1>
+<p>i=11, условие i<=33, шаг i++.</p>
+<button onclick="run()">Показать окно</button>
+<pre id="res"></pre>
+<p>BENZO@TM</p>
+
+<script>
+function run() {
+  var out = '';
+  for (var i = 11; i <= 33; i++) out += i + '\n';
+  if (out !== '') {                     // ← if
+    alert('Числа 11..33:\n' + out);     // ← alert внутри if
+  }
+  document.getElementById('res').textContent = 'for: 11, 12, ..., 33';
+}
+</script>
+</body>
+</html>

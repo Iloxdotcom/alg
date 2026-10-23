@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>3.1</title></head>
+<body>
+<h1>3.1. Ключи и значения {green, red, blue}</h1>
+<p>for (key in obj): key — ключ, obj[key] — значение.</p>
+<button onclick="run()">Показать окно</button>
+<pre id="res"></pre>
+<p>BENZO@TM</p>
+
+<script>
+function run() {
+  var obj = {green: 'зеленый', red: 'красный', blue: 'голубой'};
+  var out = '';
+  for (var key in obj) out += key + ' = ' + obj[key] + '\n';
+  if (out !== '') {                      // ← if
+    alert('Ключи и значения:\n' + out);  // ← alert внутри if
+  }
+  document.getElementById('res').textContent = out;
+}
+</script>
+</body>
+</html>

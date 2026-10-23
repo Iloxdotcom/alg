@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>1.3</title></head>
+<body>
+<h1>1.3. Чётные числа от 0 до 100</h1>
+<p>Чётное: i % 2 === 0.</p>
+<button onclick="run()">Показать окно</button>
+<pre id="res"></pre>
+<p>BENZO@TM</p>
+
+<script>
+function run() {
+  var out = '';
+  for (var i = 0; i <= 100; i += 2) out += i + '\n';
+  if (out.length > 0) {                  // ← if
+    alert('Чётные 0..100:\n' + out);     // ← alert внутри if
+  }
+  document.getElementById('res').textContent = 'for (шаг 2): 0, 2, 4, ... 100';
+}
+</script>
+</body>
+</html>

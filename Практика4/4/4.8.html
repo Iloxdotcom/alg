@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>4.8</title></head>
+<body>
+<h1>4.8. Делим 1000 на 2, пока не станет < 50</h1>
+<p>while (n >= 50): n = n / 2; num++. Ожидаемо n = 31.25, итераций 5.</p>
+<button onclick="run()">Показать окно</button>
+<pre id="res"></pre>
+<p>BENZO@TM</p>
+
+<script>
+function run() {
+  var n = 1000, num = 0, steps = [];
+  while (n >= 50) { steps.push(n); n = n / 2; num++; }
+  if (num > 0) {                             // ← if
+    alert('Шаги: ' + steps.join(' -> ') + ' -> ' + n +
+          '\nРезультат: ' + n +
+          '\nИтераций: ' + num);             // ← alert внутри if
+  }
+  document.getElementById('res').textContent =
+    'Результат: ' + n + ', итераций: ' + num;
+}
+</script>
+</body>
+</html>

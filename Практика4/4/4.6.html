@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>4.6</title></head>
+<body>
+<h1>4.6. Дни недели, выходные жирным</h1>
+<p>Сб и Вс (индексы 5 и 6) оборачиваем в &lt;b&gt;.</p>
+<button onclick="run()">Показать окно</button>
+<div id="res"></div>
+<p>BENZO@TM</p>
+
+<script>
+function run() {
+  var days = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+  var html = '';
+  for (var i = 0; i < days.length; i++) {
+    if (i >= 5) html += '<b>' + days[i] + '</b> ';   // ← if
+    else html += days[i] + ' ';
+  }
+  if (html !== '') {                        // ← if
+    alert('Дни недели: ' + days.join(' ') + ' (Сб и Вс — выходные)'); // ← alert
+  }
+  document.getElementById('res').innerHTML = html;
+}
+</script>
+</body>
+</html>

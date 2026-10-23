@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>4.2</title></head>
+<body>
+<h1>4.2. Сумма положительных элементов</h1>
+<p>Массив [5,-3,8,-1,10,-7,2]. Если arr[i] > 0 — прибавляем.</p>
+<button onclick="run()">Показать окно</button>
+<pre id="res"></pre>
+<p>BENZO@TM</p>
+
+<script>
+function run() {
+  var arr = [5, -3, 8, -1, 10, -7, 2], sum = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) sum += arr[i];
+  }
+  if (sum > 0) {                          // ← if
+    alert('Сумма положительных = ' + sum); // ← alert внутри if
+  }
+  document.getElementById('res').textContent = 'sum = ' + sum;
+}
+</script>
+</body>
+</html>
